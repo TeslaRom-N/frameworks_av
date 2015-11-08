@@ -43,7 +43,9 @@ public:
     // If requestedSize is > 0, the returned MediaBuffer should have buffer
     // size of at least requstedSize.
     status_t acquire_buffer(
-            MediaBuffer **buffer, bool nonBlocking = false, size_t requestedSize = 0);
+            MediaBuffer **buffer, bool nonBlocking, size_t requestedSize = 0);
+
+    status_t acquire_buffer(MediaBuffer **buffer);
 
 protected:
     virtual void signalBufferReturned(MediaBuffer *buffer);
